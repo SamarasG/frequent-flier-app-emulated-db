@@ -13,7 +13,7 @@ CREATE TABLE mock_flights (
   scheduled_departure_time  TIMESTAMP,
   scheduled_arrival_time    TIMESTAMP,
   real_time_status          VARCHAR(20),
-  aircraft_type             VARCHAR(50),
+  aircraft_type             VARCHAR(50)
 );
 
 INSERT INTO mock_flights

@@ -2,12 +2,19 @@ version: '3.8'
 services:
   postgres:
     image: postgres:15
+    restart: always
+    shm_size: 128mb
     container_name: mockdb-container
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: mockdb
     ports:
-      - "5454:5454"
+      - "5432:5432"
     volumes:
       - ./src/main/resources/mockdb.sql:/docker-entrypoint-initdb.d/mockdb.sql
+  adminer:
+      image: adminer
+      restart: always
+      ports:
+        - 8080:8080
